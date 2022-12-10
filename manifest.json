@@ -1,0 +1,15 @@
+{
+  "background_color":"black",
+  "description":"Stitcher",
+  "display":"standalone",
+  "icons":[
+    {
+      "src":"https://raw.githubusercontent.com/mdn/pwa-examples/master/a2hs/icon/fox-icon.png",
+      "sizes":"192x192",
+      "type":"image/png"
+    }
+  ],
+  "name":"Stitcher",
+  "short_name":"Stitcher",
+  "start_url":"/Stitcher/index.html"
+}

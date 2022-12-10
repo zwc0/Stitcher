@@ -1,0 +1,29 @@
+{
+  "name": "as",
+  "description": "Animal Sounds PWA",
+  "scripts": {
+    "watch": "npx webpack --config webpack.config.js -w",
+    "build": "npx webpack --config webpack.config.js --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwc0/as.git"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
+    "@types/react-router-dom": "5.3.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.4.4",
+    "tailwindcss": "3.2.4",
+    "typescript": "^4.9.3",
+    "webpack": "5.75.0",
+    "webpack-cli": "5.0.0",
+    "idb-keyval":"6.2.0",
+    "uuid": "9.0.0"
+  },
+  "dependencies": {
+    "ts-loader": "^9.4.2"
+  }
+}
