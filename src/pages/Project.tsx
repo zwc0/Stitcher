@@ -71,7 +71,7 @@ const Project = () => {
     return isLoading
     ? (<div>Loading...</div>)
     : (<>
-        <div className='flex gap-4 bg-blue-200'>
+        <div className='flex bg-blue-200'>
             <Link to="/" className='bg-blue-800 text-white p-2'>Home</Link>
             <h1 className='grow p-2' onClick={rename}>
                 {name}
@@ -84,23 +84,51 @@ const Project = () => {
         <div className="">
             <div className='text-center pb-6'>
                 <button type='button' onClick={()=>updateStitches()}
-                    className="h-32 aspect-square rounded-full bg-red-500">
+                    className="h-40 aspect-square rounded-full bg-red-500">
                     <span className='sr-only'>Add 1</span>
                 </button>
             </div>
-            <div className='text-center'>
-                <label>
-                    Stitch:
-                    <input type="number" value={stitchIndex + 1}
-                        className="ml-2 w-12"
-                        onChange={({target})=>updateStitchIndex((+target.value || 1) - 1)} />
-                </label>
-                <label>
-                    Row:
-                    <input type="number" value={stitches[stitchIndex]}
-                        className="ml-2 w-12"
-                        onChange={({target})=>updateStitches(+target.value || 1)} />
-                </label>
+            <div className='flex justify-center gap-2'>
+                <div>
+                    <label>
+                        Stitch:
+                        <input type="number" value={stitchIndex + 1}
+                            className="ml-2 w-12"
+                            onChange={({target})=>updateStitchIndex((+target.value || 1) - 1)} />
+                    </label>
+                    <div className='flex gap-2 justify-center'>
+                    <button className='bg-gray-200 px-4 font-bold'
+                            onClick={()=>updateStitchIndex(stitchIndex - 1)}>
+                            &#8249;
+                            <span className='sr-only'>Stitch down</span>
+                        </button>
+                        <button className='bg-gray-200 px-4 font-bold'
+                            onClick={()=>updateStitchIndex(stitchIndex + 1)}>
+                            &#8250;
+                            <span className='sr-only'>Stitch up</span>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <label>
+                        Row:
+                        <input type="number" value={stitches[stitchIndex]}
+                            className="ml-2 w-12"
+                            onChange={({target})=>updateStitches(+target.value || 1)} />
+                    </label>
+                    <div className='flex gap-2 justify-center'>
+                    <button className='bg-gray-200 px-4 font-bold'
+                            onClick={()=>updateStitches(stitches[stitchIndex] - 1)}>
+                            &#8249;
+                            <span className='sr-only'>Row down</span>
+                        </button>
+                        <button className='bg-gray-200 px-4 font-bold'
+                            onClick={()=>updateStitches(stitches[stitchIndex] + 1)} >
+                            &#8250;
+                            <span className='sr-only'>Row up</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </>);
